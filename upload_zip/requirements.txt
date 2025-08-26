@@ -1,0 +1,6 @@
+Pillow==11.3.0
+py7zr==0.20.5
+py7zr==1.0.0
+rarfile==4.2
+Requests==2.32.5
+toml==0.10.2

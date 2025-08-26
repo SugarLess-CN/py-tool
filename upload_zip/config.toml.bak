@@ -1,0 +1,56 @@
+# 更新后的配置文件示例 (config.toml)
+[source]
+# 源文件目录配置
+directory = "./archives"
+
+[delete]
+prefix = ["ewm_"]
+suffix = ["html"]
+extra = ["index", "thumb"]
+
+[file_name]
+prefix = "sugarless"
+
+[unpack]
+password = ["cosfan.cc","fantwo", "fantwo2"]
+
+# 压缩文件配置
+# 只有为7z和zip的时候，compression_level才生效，且只有7z可以同时生效compression_level和method
+# 对于zip来说，
+#    level为0则不压缩
+#    level为1使用DEFLATE模式，压缩率在40-70
+#    level为2使用BZIP2模式，压缩率在50-80
+#    level为3使用LZMA模式，压缩率在60-90
+# 对于7z来说
+#    level可选0-9
+#    method可选lzma2、lzma、bzip2、deflate、copy、ppmd、delta
+#    可选level的method有lzma2、lzma和deflate
+[compress_file]
+format = "7z" # 可选为7z、zip、tar、gzip、gz、bz2、bzip2、xz
+compression_level = 8
+password = "sugarless"
+method = "lzma2"
+
+[compress_img]
+format = "webp"
+quality = 80 # 压缩率
+longWidth = 1280 # 图片最大宽度
+
+[url]
+upload = "https://picapi.picart.cc/api/v1/upload/file"
+create = "https://picapi.picart.cc/api/v1/article"
+
+[auth]
+token = ""
+did = "uuid-1"
+d_name = "IQOO"
+d_type = "android"
+
+[logger]
+level = "info"
+file_name = "info.log"
+name = "sugarless"
+
+[worker]
+upload = 4
+unpack = 4
